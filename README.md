@@ -66,6 +66,8 @@ Let's look at the same example using **angular-once**:
 ```
 Number of watchers? **0** (actually 1 as angular uses a separate watch for the `ng-repeat` directive itself).
 
+注意有个坑,如果数据集会变化(<code>users</code>),例如分页,不能和 <code>track by $index</code> 一起使用, 会导致绑定的数据不能正常显示. 
+
 **IMPORTANT: Built in angular `ng-href` and `ng-src` directives support interpolation (`{{ }}` notation), `angular-once` doesn't due to performance reasons (avoid setting up watchers).**
 
 ## API
